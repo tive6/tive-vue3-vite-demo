@@ -16,7 +16,7 @@ export default defineConfig({
   },
   server: {
     port: '8090',
-    strictPort: true,
+    strictPort: false,
     open: false,
     cors: true,
     proxy: {
@@ -59,4 +59,3 @@ export default defineConfig({
     ],
   },
 })
-
