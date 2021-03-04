@@ -1,10 +1,16 @@
-import { ref } from 'vue'
+import { ref, getCurrentInstance } from 'vue'
 
 export default () => {
     let c = ref('c')
 
+    const currentInstance = getCurrentInstance()
+    const { $notify } = currentInstance.appContext.config.globalProperties
+
     const logC = ()=> {
-        console.log('C')
+        $notify({
+            type: 'success',
+            message: 'Notify - 组件C',
+        })
     }
 
     return {
