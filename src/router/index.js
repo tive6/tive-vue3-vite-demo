@@ -1,21 +1,20 @@
 import {createRouter, createWebHistory} from 'vue-router'
+import { defineAsyncComponent } from 'vue'
 // const path = require('path')
 
-const _import = (path) => () => import(`../views/${path}.vue`);
-
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('/tive-vue3-vite-demo/'), // 如果是根目录部署请配置为 /
     routes: [
         // route -> routes
         {
             path: '/',
             name: 'index',
-            component: _import('index'),
+            component: defineAsyncComponent(() => import(`../views/index.vue`)),
         },
         {
             path: '/random-img',
             name: 'random-img',
-            component: _import('randomImg'),
+            component: defineAsyncComponent(() => import(`../views/randomImg.vue`)),
         },
         {
             path: '/*',

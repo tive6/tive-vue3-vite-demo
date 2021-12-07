@@ -17,7 +17,7 @@
         <van-button type="primary"
                     icon="search"
                     zise="mini"
-                    text="随机"
+                    text="随机dog"
                     :loading="loading"
                     @click="getImg"
                     color="linear-gradient(to right, #ff6034, #ee0a24)"

@@ -6,9 +6,9 @@
 </template>
 
 <script setup>
-import { defineProps, reactive } from 'vue'
+import { reactive } from 'vue'
 
-defineProps({
+const props = defineProps({
   msg: String
 })
 

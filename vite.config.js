@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-
 // https://vitejs.dev/config/
+
 export default defineConfig({
   root: process.cwd(),
-  base: '/',
+  base: '/tive-vue3-vite-demo/', // 如果是根目录部署请配置为 /
   // mode: process.env.NODE_ENV,
   publicDir: 'public',
   plugins: [
@@ -37,17 +37,11 @@ export default defineConfig({
     },
   },
   build: {
-    target: 'modules',
-    outDir: 'dist',
+    // outDir: 'dist',
     assetsDir: 'assets',
-    assetsInlineLimit: 4096, // 4kb
-    cssCodeSplit: true,
     sourcemap: false,
-    manifest: true, // 生成 manifest.json
-    minify: 'terser',
-    emptyOutDir: true,
-    brotliSize: true,
-    chunkSizeWarningLimit: 500,
+    manifest: false,
+    brotliSize: false,
   },
   optimizeDeps: {
     include: [
