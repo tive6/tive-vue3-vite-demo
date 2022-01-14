@@ -3,9 +3,11 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 export default defineConfig({
   root: process.cwd(),
-  base: '/tive-vue3-vite-demo/', // 如果是根目录部署请配置为 /
+  base: isProduction ? '/tive-vue3-vite-demo/' : '/', // 如果是根目录部署请配置为 /
   // mode: process.env.NODE_ENV,
   publicDir: 'public',
   plugins: [
