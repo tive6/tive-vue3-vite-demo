@@ -2,8 +2,11 @@ import {createRouter, createWebHistory} from 'vue-router'
 import { defineAsyncComponent } from 'vue'
 // const path = require('path')
 
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/tive-vue3-vite-demo/' : '/'
+
 const router = createRouter({
-    history: createWebHistory('/tive-vue3-vite-demo/'), // 如果是根目录部署请配置为 /
+    history: createWebHistory(basePath), // 如果是根目录部署请配置为 /
     routes: [
         // route -> routes
         {
@@ -15,6 +18,11 @@ const router = createRouter({
             path: '/random-img',
             name: 'random-img',
             component: defineAsyncComponent(() => import(`../views/randomImg.vue`)),
+        },
+        {
+            path: '/wasm',
+            name: 'wasm',
+            component: defineAsyncComponent(() => import(`../views/wasm.vue`)),
         },
         {
             path: '/*',

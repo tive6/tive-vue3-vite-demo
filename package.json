@@ -5,6 +5,7 @@
     "start": "vite --host",
     "dev": "nodemon --watch vite.config.js --exec \" vite --host \" ",
     "build": "vite build",
+    "build:dev": "vite build --mode dev",
     "serve": "vite preview --host"
   },
   "dependencies": {
