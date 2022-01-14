@@ -1,12 +1,14 @@
 {
   "name": "tive-vue3-vite-demo",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "scripts": {
     "start": "vite --host",
     "dev": "nodemon --watch vite.config.js --exec \" vite --host \" ",
-    "build": "vite build",
+    "serve": "vite preview --host",
     "build:dev": "vite build --mode dev",
-    "serve": "vite preview --host"
+    "build": "vite build",
+    "zip": "npm run build && node ./zip.js",
+    "git": "tive git -c tive.git.config.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -18,11 +20,13 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.1.4",
     "@vue/compiler-sfc": "^3.2.24",
+    "adm-zip": "^0.5.9",
     "autoprefixer": "^10.2.4",
     "lib-flexible": "^0.3.2",
     "postcss-loader": "^4.1.0",
     "postcss-px2rem": "^0.3.0",
     "postcss-px2rem-exclude": "^0.0.6",
+    "rimraf": "^3.0.2",
     "sass": "^1.32.8",
     "vite": "^2.0.0"
   },
